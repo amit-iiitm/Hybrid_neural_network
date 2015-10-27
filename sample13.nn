@@ -1,0 +1,434 @@
+[net]
+input_neurons = 2
+hidden_neurons = 43
+output_neurons = 1
+copy_levels = 0
+learnrate = 0.22
+epochs = 28
+time_delay = 0
+halt_on_extremes = False
+random_constraint = 1.0
+
+
+[layer 0]
+layer_type = input
+nodes = node-0:0 node-0:1 node-0:2
+
+
+[node-0:0]
+node_type = input
+activation_type = linear
+connections = 
+ 
+[node-0:1]
+node_type = input
+activation_type = linear
+connections = 
+ 
+[node-0:2]
+node_type = bias
+activation_type = None
+connections = 
+ 
+
+[layer 1]
+layer_type = hidden
+nodes = node-1:0 node-1:1 node-1:2 node-1:3 node-1:4 node-1:5 node-1:6 node-1:7 node-1:8 node-1:9 node-1:10 node-1:11 node-1:12 node-1:13 node-1:14 node-1:15 node-1:16 node-1:17 node-1:18 node-1:19 node-1:20 node-1:21 node-1:22 node-1:23 node-1:24 node-1:25 node-1:26 node-1:27 node-1:28 node-1:29 node-1:30 node-1:31 node-1:32 node-1:33 node-1:34 node-1:35 node-1:36 node-1:37 node-1:38 node-1:39 node-1:40 node-1:41 node-1:42
+
+
+[node-1:0]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -1.83135696138
+ node-0:1, 2.77137008557
+ node-0:2, -5.59208248506
+ 
+[node-1:1]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -0.989513362936
+ node-0:1, 3.31204940574
+ node-0:2, 4.41688484128
+ 
+[node-1:2]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -3.99459367656
+ node-0:1, -0.0585271058563
+ node-0:2, 3.97204772713
+ 
+[node-1:3]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, 5.19732327047
+ node-0:1, -3.00590102062
+ node-0:2, 5.78590704821
+ 
+[node-1:4]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, 4.4931686966
+ node-0:1, -4.12363458685
+ node-0:2, -3.30516882725
+ 
+[node-1:5]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -1.60797163496
+ node-0:1, -1.59372897796
+ node-0:2, -4.59300456873
+ 
+[node-1:6]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, 2.50165953599
+ node-0:1, 0.801760573151
+ node-0:2, -2.0081949046
+ 
+[node-1:7]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, 2.07550012817
+ node-0:1, 1.24789677428
+ node-0:2, -5.23751273606
+ 
+[node-1:8]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -3.22212820398
+ node-0:1, -0.155363117892
+ node-0:2, -2.94001098252
+ 
+[node-1:9]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -4.08181439229
+ node-0:1, 5.68867695309
+ node-0:2, 5.00833368653
+ 
+[node-1:10]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -5.79973387454
+ node-0:1, -2.6955045463
+ node-0:2, -5.38976283814
+ 
+[node-1:11]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -3.00905388818
+ node-0:1, 3.72341664052
+ node-0:2, -1.30123455734
+ 
+[node-1:12]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, 0.324351285167
+ node-0:1, 1.92294549575
+ node-0:2, -4.55990861702
+ 
+[node-1:13]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, 0.16593260349
+ node-0:1, 2.29462653995
+ node-0:2, 5.16521404872
+ 
+[node-1:14]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -2.85080719858
+ node-0:1, 5.72683788792
+ node-0:2, 4.60887731841
+ 
+[node-1:15]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -3.72295892639
+ node-0:1, -2.84276890954
+ node-0:2, -2.08952789572
+ 
+[node-1:16]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -0.231100516865
+ node-0:1, -5.40446930841
+ node-0:2, 3.28899138013
+ 
+[node-1:17]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, 1.26634346043
+ node-0:1, -2.63678512394
+ node-0:2, 1.05267181785
+ 
+[node-1:18]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, 1.08613040138
+ node-0:1, -5.2664433693
+ node-0:2, -3.28841387963
+ 
+[node-1:19]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, 0.592056818516
+ node-0:1, -1.78970738279
+ node-0:2, -3.99022573949
+ 
+[node-1:20]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, 5.45883853155
+ node-0:1, 5.24434776945
+ node-0:2, -6.92897339331
+ 
+[node-1:21]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -2.77673165486
+ node-0:1, -5.36600514003
+ node-0:2, -0.240004503918
+ 
+[node-1:22]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, 3.7126481136
+ node-0:1, 0.284363731851
+ node-0:2, -0.645784264777
+ 
+[node-1:23]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, 1.74153009226
+ node-0:1, -4.336607383
+ node-0:2, -0.975176933828
+ 
+[node-1:24]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, 1.34186177764
+ node-0:1, 5.31661386796
+ node-0:2, -4.02456764371
+ 
+[node-1:25]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, 9.79108074052
+ node-0:1, 2.53313400895
+ node-0:2, -3.49673395821
+ 
+[node-1:26]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -2.4128314432
+ node-0:1, -1.90107267053
+ node-0:2, -2.10232486186
+ 
+[node-1:27]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -6.19944735333
+ node-0:1, 3.05777032883
+ node-0:2, 0.112293707473
+ 
+[node-1:28]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -1.33842410325
+ node-0:1, 1.85880547916
+ node-0:2, 1.23241593293
+ 
+[node-1:29]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -5.2401522172
+ node-0:1, -3.98144344437
+ node-0:2, -0.98723946984
+ 
+[node-1:30]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -1.33231647031
+ node-0:1, -3.22619063634
+ node-0:2, 6.62531349227
+ 
+[node-1:31]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, 5.33118182177
+ node-0:1, -6.37336034851
+ node-0:2, -3.13375115821
+ 
+[node-1:32]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -5.90847603501
+ node-0:1, -0.621993920081
+ node-0:2, 4.91442457405
+ 
+[node-1:33]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, 1.35612825361
+ node-0:1, -0.0104444335158
+ node-0:2, 1.90928935856
+ 
+[node-1:34]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -3.99459367656
+ node-0:1, -0.0585271058563
+ node-0:2, 3.97204772713
+ 
+[node-1:35]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, 5.19732327047
+ node-0:1, -3.00590102062
+ node-0:2, 5.78590704821
+ 
+[node-1:36]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, 4.4931686966
+ node-0:1, -4.12363458685
+ node-0:2, -3.30516882725
+ 
+[node-1:37]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -1.60797163496
+ node-0:1, -1.59372897796
+ node-0:2, -4.59300456873
+ 
+[node-1:38]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, 2.50165953599
+ node-0:1, 0.801760573151
+ node-0:2, -2.0081949046
+ 
+[node-1:39]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, 2.07550012817
+ node-0:1, 1.24789677428
+ node-0:2, -5.23751273606
+ 
+[node-1:40]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -3.22212820398
+ node-0:1, -0.155363117892
+ node-0:2, -2.94001098252
+ 
+[node-1:41]
+node_type = hidden
+activation_type = sigmoid
+connections = 
+ node-0:0, -4.08181439229
+ node-0:1, 5.68867695309
+ node-0:2, 5.00833368653
+ 
+[node-1:42]
+node_type = bias
+activation_type = None
+connections = 
+ 
+
+[layer 2]
+layer_type = output
+nodes = node-2:0
+
+
+[node-2:0]
+node_type = output
+activation_type = sigmoid
+connections = 
+ node-1:0, -5.69276419008
+ node-1:1, -2.4101634161
+ node-1:2, -4.69854594345
+ node-1:3, -0.0807709445921
+ node-1:4, 2.87932860508
+ node-1:5, 1.1064509253
+ node-1:6, -0.0705037638294
+ node-1:7, 2.43124299703
+ node-1:8, -3.78170377315
+ node-1:9, 0.416447914906
+ node-1:10, 2.30445079441
+ node-1:11, 5.59512727817
+ node-1:12, -2.8253724191
+ node-1:13, 6.07765597333
+ node-1:14, 4.74182367713
+ node-1:15, -3.66228517911
+ node-1:16, -3.36849787379
+ node-1:17, -2.09022939417
+ node-1:18, -1.60319663304
+ node-1:19, -4.62415243139
+ node-1:20, 3.90874167774
+ node-1:21, 0.993099653386
+ node-1:22, -2.29276345868
+ node-1:23, 0.649112681598
+ node-1:24, 2.19355950696
+ node-1:25, -7.30958837643
+ node-1:26, -3.12921833607
+ node-1:27, 3.80875240757
+ node-1:28, -0.760640882736
+ node-1:29, -3.65966330655
+ node-1:30, 5.7817460241
+ node-1:31, 5.17640135371
+ node-1:32, -5.42751443508
+ node-1:33, -2.53200649444
+ node-1:34, -4.69854594345
+ node-1:35, -0.0807709445921
+ node-1:36, 2.87932860508
+ node-1:37, 1.1064509253
+ node-1:38, -0.0705037638294
+ node-1:39, 2.43124299703
+ node-1:40, -3.78170377315
+ node-1:41, 0.416447914906
+ node-1:42, 2.57373749169
+ 
+

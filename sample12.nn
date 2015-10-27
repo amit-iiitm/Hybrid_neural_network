@@ -1,0 +1,326 @@
+[net]
+input_neurons = 2
+hidden_neurons = 31
+output_neurons = 1
+copy_levels = 0
+learnrate = 0.21
+epochs = 29
+time_delay = 0
+halt_on_extremes = False
+random_constraint = 1.0
+
+
+[layer 0]
+layer_type = input
+nodes = node-0:0 node-0:1 node-0:2
+
+
+[node-0:0]
+node_type = input
+activation_type = linear
+connections = 
+ 
+[node-0:1]
+node_type = input
+activation_type = linear
+connections = 
+ 
+[node-0:2]
+node_type = bias
+activation_type = None
+connections = 
+ 
+
+[layer 1]
+layer_type = hidden
+nodes = node-1:0 node-1:1 node-1:2 node-1:3 node-1:4 node-1:5 node-1:6 node-1:7 node-1:8 node-1:9 node-1:10 node-1:11 node-1:12 node-1:13 node-1:14 node-1:15 node-1:16 node-1:17 node-1:18 node-1:19 node-1:20 node-1:21 node-1:22 node-1:23 node-1:24 node-1:25 node-1:26 node-1:27 node-1:28 node-1:29 node-1:30
+
+
+[node-1:0]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, 0.464861966051
+ node-0:1, 3.05518875333
+ node-0:2, -1.90981007102
+ 
+[node-1:1]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, 3.5367809539
+ node-0:1, -2.87086900529
+ node-0:2, -1.16360551748
+ 
+[node-1:2]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, -1.18761874074
+ node-0:1, 3.68879373886
+ node-0:2, -1.00478235642
+ 
+[node-1:3]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, 3.97606584228
+ node-0:1, -5.24253305701
+ node-0:2, -0.276262641894
+ 
+[node-1:4]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, 0.761393185235
+ node-0:1, -1.17112589491
+ node-0:2, 0.0158864564486
+ 
+[node-1:5]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, 3.19628445412
+ node-0:1, -2.7730810072
+ node-0:2, -0.955147279187
+ 
+[node-1:6]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, 0.395580376579
+ node-0:1, -3.36087704334
+ node-0:2, 1.42712759019
+ 
+[node-1:7]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, 1.83249610585
+ node-0:1, 1.94298349818
+ node-0:2, -2.36092510551
+ 
+[node-1:8]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, 0.533388669582
+ node-0:1, -0.140559620545
+ node-0:2, -0.318259177473
+ 
+[node-1:9]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, -0.524842118006
+ node-0:1, 4.31712030581
+ node-0:2, -1.82771962905
+ 
+[node-1:10]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, 1.8268902877
+ node-0:1, -2.07947440374
+ node-0:2, -0.291298616022
+ 
+[node-1:11]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, 1.45350549041
+ node-0:1, -2.79783279781
+ node-0:2, 0.357449027952
+ 
+[node-1:12]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, -0.858346962214
+ node-0:1, 0.456686479255
+ node-0:2, 0.40459562382
+ 
+[node-1:13]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, 1.29559406409
+ node-0:1, -1.91222371032
+ node-0:2, 0.0176754558028
+ 
+[node-1:14]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, -2.21291603758
+ node-0:1, 0.548003729867
+ node-0:2, 1.36514539402
+ 
+[node-1:15]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, -1.92495649208
+ node-0:1, -4.33888904175
+ node-0:2, 3.64660538014
+ 
+[node-1:16]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, -0.930202460779
+ node-0:1, 1.48320744809
+ node-0:2, -0.057092091033
+ 
+[node-1:17]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, -2.8500675006
+ node-0:1, 4.01320181787
+ node-0:2, 0.0791017687152
+ 
+[node-1:18]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, 1.42571707428
+ node-0:1, -2.2169362353
+ node-0:2, 0.0752139669333
+ 
+[node-1:19]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, 0.393026560812
+ node-0:1, 1.48700398046
+ node-0:2, -1.04636142568
+ 
+[node-1:20]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, 2.21018187362
+ node-0:1, -5.45362828872
+ node-0:2, 1.15363781084
+ 
+[node-1:21]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, -1.36724328108
+ node-0:1, 1.83613096369
+ node-0:2, 0.0773936842967
+ 
+[node-1:22]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, -1.28260944245
+ node-0:1, 5.20159960597
+ node-0:2, -1.70181699001
+ 
+[node-1:23]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, -0.300947170695
+ node-0:1, -1.20101974407
+ node-0:2, 0.83894698016
+ 
+[node-1:24]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, -0.819581490554
+ node-0:1, 5.71259231761
+ node-0:2, -2.31405748064
+ 
+[node-1:25]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, 0.310175425829
+ node-0:1, -0.143815876774
+ node-0:2, -0.1594249518
+ 
+[node-1:26]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, -4.26548254312
+ node-0:1, 7.10248469371
+ node-0:2, -0.461785483363
+ 
+[node-1:27]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, 1.46084658028
+ node-0:1, 1.40353879547
+ node-0:2, -1.81274293715
+ 
+[node-1:28]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, 1.88306942193
+ node-0:1, 1.92840942697
+ node-0:2, -2.38231263313
+ 
+[node-1:29]
+node_type = hidden
+activation_type = linear
+connections = 
+ node-0:0, -1.1928856719
+ node-0:1, 1.31781352066
+ node-0:2, 0.218700339164
+ 
+[node-1:30]
+node_type = bias
+activation_type = None
+connections = 
+ 
+
+[layer 2]
+layer_type = output
+nodes = node-2:0
+
+
+[node-2:0]
+node_type = output
+activation_type = sigmoid
+connections = 
+ node-1:0, 0.199188547161
+ node-1:1, 0.270572958596
+ node-1:2, 0.0397004389962
+ node-1:3, 0.207716422932
+ node-1:4, 0.0441557116407
+ node-1:5, 0.232344264081
+ node-1:6, -0.115556710401
+ node-1:7, 0.30536478189
+ node-1:8, 0.0496926548125
+ node-1:9, 0.151827657437
+ node-1:10, 0.108077093766
+ node-1:11, 0.0286390401611
+ node-1:12, -0.0766541368246
+ node-1:13, 0.0556967477539
+ node-1:14, -0.227484894305
+ node-1:15, -0.423027238036
+ node-1:16, -0.0435562983752
+ node-1:17, -0.145385765617
+ node-1:18, 0.0571777093752
+ node-1:19, 0.110682142362
+ node-1:20, -0.011053388504
+ node-1:21, -0.0693303338149
+ node-1:22, 0.0959498620391
+ node-1:23, -0.0919488500037
+ node-1:24, 0.178051425968
+ node-1:25, 0.0303328750774
+ node-1:26, -0.151286577226
+ node-1:27, 0.240217284786
+ node-1:28, 0.304055718454
+ node-1:29, -0.0783956189752
+ node-1:30, 0.166488265165
+ 
+

@@ -1,0 +1,738 @@
+2015-10-27 01:57:59,193 started run
+2015-10-27 02:15:09,532 started run
+2015-10-27 02:36:31,139 started run
+2015-10-27 02:36:38,666 Finished generation: 0 Max generations: 1
+2015-10-27 02:36:38,666 best_value: 0.051961438844 median: 0.638694234774 mean: 0.734864120423
+2015-10-27 02:36:38,666 import math
+import random
+from pyneurgen.neuralnet import NeuralNet
+from pyneurgen.nodes import Node, BiasNode, CopyNode, Connection
+from pyneurgen.layers import Layer
+from pyneurgen.recurrent import JordanRecurrent
+net = NeuralNet()
+hidden_nodes = max(int(round(2.1 * float(15))), 1)
+net.init_layers(len(self.all_inputs[0]),
+                [hidden_nodes],
+                len(self.all_targets[0]))
+net.layers[1].set_activation_type('sigmoid')
+net.output_layer.set_activation_type('linear')
+#   Use the genotype to get starting weights
+for layer in net.layers[1:]:
+    for node in layer.nodes:
+        for conn in node.input_connections:
+            #   every time it is asked, another starting weight is given
+            conn.set_weight(self.runtime_resolve('<starting_weight>', 'float'))
+# Note the injection of data from the genotype
+# In a real project, the genotype might pull the data from elsewhere.
+net.set_all_inputs(self.all_inputs)
+net.set_all_targets(self.all_targets)
+length = len(self.all_inputs)
+learn_end_point = int(length * .6)
+validation_end_point = int(length * .8)
+net.set_learn_range(0, learn_end_point)
+net.set_validation_range(0, learn_end_point)
+net.set_validation_range(learn_end_point + 1, validation_end_point)
+net.set_test_range(validation_end_point + 1, length - 1)
+net.set_learnrate(0.27)
+epochs = int(round(2.7 * float(10)))
+if epochs > 0:
+    #   Use learning to further set the weights
+    net.learn(epochs=epochs, show_epoch_results=True,
+        random_testing=False)
+#   Use validation for generating the fitness value
+mse = net.validate(show_sample_interval=0)
+print "mse", mse
+modelname = self.runtime_resolve('<model_name>', 'str')
+net.save(modelname)
+self.set_bnf_variable('<saved_name>', modelname)
+#   This method can be used to look at all the particulars
+#       of what happened...uses disk space
+self.net = net
+fitness = mse
+self.set_bnf_variable('<fitness>', fitness)
+
+2015-10-27 02:36:48,797 stopping processing due to max generation
+2015-10-27 02:36:48,797 completed run: generations: 1, best member:15 fitness: 0.051961438844
+2015-10-27 03:14:44,959 started run
+2015-10-27 03:44:55,492 Finished generation: 0 Max generations: 1
+2015-10-27 03:44:55,492 best_value: 2.0 median: 2.0 mean: 2.0
+2015-10-27 03:44:55,493 import math
+import random
+from pyneurgen.neuralnet import NeuralNet
+from pyneurgen.nodes import Node, BiasNode, CopyNode, Connection
+from pyneurgen.layers import Layer
+from pyneurgen.recurrent import JordanRecurrent
+net = NeuralNet()
+hidden_nodes = max(int(round(2.6 * float(15))), 1)
+net.init_layers(len(self.all_inputs[0]),
+                [hidden_nodes],
+                len(self.all_targets[0]))
+net.layers[1].set_activation_type('sigmoid')
+net.output_layer.set_activation_type('linear')
+#   Use the genotype to get starting weights
+for layer in net.layers[1:]:
+    for node in layer.nodes:
+        for conn in node.input_connections:
+            #   every time it is asked, another starting weight is given
+            conn.set_weight(self.runtime_resolve('<starting_weight>', 'float'))
+# Note the injection of data from the genotype
+# In a real project, the genotype might pull the data from elsewhere.
+net.set_all_inputs(self.all_inputs)
+net.set_all_targets(self.all_targets)
+length = len(self.all_inputs)
+learn_end_point = int(length * .6)
+validation_end_point = int(length * .8)
+net.set_learn_range(0, learn_end_point)
+net.set_validation_range(0, learn_end_point)
+net.set_validation_range(learn_end_point + 1, validation_end_point)
+net.set_test_range(validation_end_point + 1, length - 1)
+net.set_learnrate(0.27)
+epochs = int(round(2.7 * float(10)))
+if epochs > 0:
+    #   Use learning to further set the weights
+    net.learn(epochs=epochs, show_epoch_results=True,
+        random_testing=False)
+#   Use validation for generating the fitness value
+mse = net.validate(show_sample_interval=0)
+print "mse", mse
+modelname = self.runtime_resolve('<model_name>', 'str')
+net.save(modelname)
+self.set_bnf_variable('<saved_name>', modelname)
+#   This method can be used to look at all the particulars
+#       of what happened...uses disk space
+self.net = net
+fitness = mse
+self.set_bnf_variable('<fitness>', fitness)
+
+2015-10-27 03:49:06,693 started run
+2015-10-27 04:18:00,931 started run
+2015-10-27 04:18:00,976 Finished generation: 0 Max generations: 1
+2015-10-27 04:18:00,976 best_value: 2.0 median: 2.0 mean: 2.0
+2015-10-27 04:18:00,976 import math
+import random
+from pyneurgen.neuralnet import NeuralNet
+from pyneurgen.nodes import Node, BiasNode, CopyNode, Connection
+from pyneurgen.layers import Layer
+from pyneurgen.recurrent import JordanRecurrent
+net = NeuralNet()
+hidden_nodes = max(int(round(2.5 * float(15))), 1)
+net.init_layers(len(self.all_inputs[0]),
+                [hidden_nodes],
+                len(self.all_targets[0]))
+net.layers[1].set_activation_type('linear')
+net.output_layer.set_activation_type('tanh')
+#   Use the genotype to get starting weights
+for layer in net.layers[1:]:
+    for node in layer.nodes:
+        for conn in node.input_connections:
+            #   every time it is asked, another starting weight is given
+            conn.set_weight(self.runtime_resolve('<starting_weight>', 'float'))
+# Note the injection of data from the genotype
+# In a real project, the genotype might pull the data from elsewhere.
+net.set_all_inputs(self.all_inputs)
+net.set_all_targets(self.all_targets)
+length = len(self.all_inputs)
+learn_end_point = int(length * .6)
+validation_end_point = int(length * .8)
+net.set_learn_range(0, learn_end_point)
+net.set_validation_range(0, learn_end_point)
+net.set_validation_range(learn_end_point + 1, validation_end_point)
+net.set_test_range(validation_end_point + 1, length - 1)
+net.set_learnrate(0.26)
+epochs = int(round(2.8 * float(1000)))
+if epochs > 0:
+    #   Use learning to further set the weights
+    net.learn(epochs=epochs, show_epoch_results=True,
+        random_testing=False)
+#   Use validation for generating the fitness value
+mse = net.validate(show_sample_interval=0)
+print "mse", mse
+modelname = self.runtime_resolve('<model_name>', 'str')
+net.save(modelname)
+self.set_bnf_variable('<saved_name>', modelname)
+#   This method can be used to look at all the particulars
+#       of what happened...uses disk space
+self.net = net
+fitness = mse
+self.set_bnf_variable('<fitness>', fitness)
+
+2015-10-27 04:18:00,997 stopping processing due to max generation
+2015-10-27 04:18:00,997 completed run: generations: 1, best member:0 fitness: 2.0
+2015-10-27 04:18:33,498 started run
+2015-10-27 04:18:33,564 Finished generation: 0 Max generations: 1
+2015-10-27 04:18:33,565 best_value: 2.0 median: 2.0 mean: 2.0
+2015-10-27 04:18:33,565 import math
+import random
+from pyneurgen.neuralnet import NeuralNet
+from pyneurgen.nodes import Node, BiasNode, CopyNode, Connection
+from pyneurgen.layers import Layer
+from pyneurgen.recurrent import JordanRecurrent
+net = NeuralNet()
+hidden_nodes = max(int(round(2.9 * float(15))), 1)
+net.init_layers(len(self.all_inputs[0]),
+                [hidden_nodes],
+                len(self.all_targets[0]))
+net.layers[1].set_activation_type('tanh')
+net.output_layer.set_activation_type('tanh')
+#   Use the genotype to get starting weights
+for layer in net.layers[1:]:
+    for node in layer.nodes:
+        for conn in node.input_connections:
+            #   every time it is asked, another starting weight is given
+            conn.set_weight(self.runtime_resolve('<starting_weight>', 'float'))
+# Note the injection of data from the genotype
+# In a real project, the genotype might pull the data from elsewhere.
+net.set_all_inputs(self.all_inputs)
+net.set_all_targets(self.all_targets)
+length = len(self.all_inputs)
+learn_end_point = int(length * .6)
+validation_end_point = int(length * .8)
+net.set_learn_range(0, learn_end_point)
+net.set_validation_range(0, learn_end_point)
+net.set_validation_range(learn_end_point + 1, validation_end_point)
+net.set_test_range(validation_end_point + 1, length - 1)
+net.set_learnrate(0.28)
+epochs = int(round(2.6 * float(1000)))
+if epochs > 0:
+    #   Use learning to further set the weights
+    net.learn(epochs=epochs, show_epoch_results=True,
+        random_testing=False)
+#   Use validation for generating the fitness value
+mse = net.validate(show_sample_interval=0)
+print "mse", mse
+modelname = self.runtime_resolve('<model_name>', 'str')
+net.save(modelname)
+self.set_bnf_variable('<saved_name>', modelname)
+#   This method can be used to look at all the particulars
+#       of what happened...uses disk space
+self.net = net
+fitness = mse
+self.set_bnf_variable('<fitness>', fitness)
+
+2015-10-27 04:18:33,599 stopping processing due to max generation
+2015-10-27 04:18:33,600 completed run: generations: 1, best member:0 fitness: 2.0
+2015-10-27 04:20:02,608 started run
+2015-10-27 04:20:02,667 Finished generation: 0 Max generations: 1
+2015-10-27 04:20:02,668 best_value: 2.0 median: 2.0 mean: 2.0
+2015-10-27 04:20:02,668 import math
+import random
+from pyneurgen.neuralnet import NeuralNet
+from pyneurgen.nodes import Node, BiasNode, CopyNode, Connection
+from pyneurgen.layers import Layer
+from pyneurgen.recurrent import JordanRecurrent
+net = NeuralNet()
+hidden_nodes = max(int(round(2.1 * float(15))), 1)
+net.init_layers(len(self.all_inputs[0]),
+                [hidden_nodes],
+                len(self.all_targets[0]))
+net.layers[1].set_activation_type('linear')
+net.output_layer.set_activation_type('tanh')
+#   Use the genotype to get starting weights
+for layer in net.layers[1:]:
+    for node in layer.nodes:
+        for conn in node.input_connections:
+            #   every time it is asked, another starting weight is given
+            conn.set_weight(self.runtime_resolve('<starting_weight>', 'float'))
+# Note the injection of data from the genotype
+# In a real project, the genotype might pull the data from elsewhere.
+net.set_all_inputs(self.all_inputs)
+net.set_all_targets(self.all_targets)
+length = len(self.all_inputs)
+learn_end_point = int(length * .6)
+validation_end_point = int(length * .8)
+net.set_learn_range(0, learn_end_point)
+net.set_validation_range(0, learn_end_point)
+net.set_validation_range(learn_end_point + 1, validation_end_point)
+net.set_test_range(validation_end_point + 1, length - 1)
+net.set_learnrate(0.27)
+epochs = int(round(2.5 * float(1000)))
+if epochs > 0:
+    #   Use learning to further set the weights
+    net.learn(epochs=epochs, show_epoch_results=True,
+        random_testing=False)
+#   Use validation for generating the fitness value
+mse = net.validate(show_sample_interval=0)
+print "mse", mse
+modelname = self.runtime_resolve('<model_name>', 'str')
+net.save(modelname)
+self.set_bnf_variable('<saved_name>', modelname)
+#   This method can be used to look at all the particulars
+#       of what happened...uses disk space
+self.net = net
+fitness = mse
+self.set_bnf_variable('<fitness>', fitness)
+
+2015-10-27 04:20:02,698 stopping processing due to max generation
+2015-10-27 04:20:02,698 completed run: generations: 1, best member:0 fitness: 2.0
+2015-10-27 04:21:25,027 started run
+2015-10-27 04:21:25,087 Finished generation: 0 Max generations: 1
+2015-10-27 04:21:25,087 best_value: 2.0 median: 2.0 mean: 2.0
+2015-10-27 04:21:25,087 import math
+import random
+from pyneurgen.neuralnet import NeuralNet
+from pyneurgen.nodes import Node, BiasNode, CopyNode, Connection
+from pyneurgen.layers import Layer
+from pyneurgen.recurrent import JordanRecurrent
+net = NeuralNet()
+hidden_nodes = max(int(round(2.0 * float(15))), 1)
+net.init_layers(len(self.all_inputs[0]),
+                [hidden_nodes],
+                len(self.all_targets[0]))
+net.layers[1].set_activation_type('linear')
+net.output_layer.set_activation_type('tanh')
+#   Use the genotype to get starting weights
+for layer in net.layers[1:]:
+    for node in layer.nodes:
+        for conn in node.input_connections:
+            #   every time it is asked, another starting weight is given
+            conn.set_weight(self.runtime_resolve('<starting_weight>', 'float'))
+# Note the injection of data from the genotype
+# In a real project, the genotype might pull the data from elsewhere.
+net.set_all_inputs(self.all_inputs)
+net.set_all_targets(self.all_targets)
+length = len(self.all_inputs)
+learn_end_point = int(length * .6)
+validation_end_point = int(length * .8)
+net.set_learn_range(0, learn_end_point)
+net.set_validation_range(0, learn_end_point)
+net.set_validation_range(learn_end_point + 1, validation_end_point)
+net.set_test_range(validation_end_point + 1, length - 1)
+net.set_learnrate(0.27)
+epochs = int(round(2.7 * float(1000)))
+if epochs > 0:
+    #   Use learning to further set the weights
+    net.learn(epochs=epochs, show_epoch_results=True,
+        random_testing=False)
+#   Use validation for generating the fitness value
+mse = net.validate(show_sample_interval=0)
+print "mse", mse
+modelname = self.runtime_resolve('<model_name>', 'str')
+net.save(modelname)
+self.set_bnf_variable('<saved_name>', modelname)
+#   This method can be used to look at all the particulars
+#       of what happened...uses disk space
+self.net = net
+fitness = mse
+self.set_bnf_variable('<fitness>', fitness)
+
+2015-10-27 04:21:25,118 stopping processing due to max generation
+2015-10-27 04:21:25,118 completed run: generations: 1, best member:0 fitness: 2.0
+2015-10-27 04:28:06,965 started run
+2015-10-27 04:28:07,048 Finished generation: 0 Max generations: 1
+2015-10-27 04:28:07,048 best_value: 2.0 median: 2.0 mean: 2.0
+2015-10-27 04:28:07,048 import math
+import random
+from pyneurgen.neuralnet import NeuralNet
+from pyneurgen.nodes import Node, BiasNode, CopyNode, Connection
+from pyneurgen.layers import Layer
+from pyneurgen.recurrent import JordanRecurrent
+net = NeuralNet()
+hidden_nodes = max(int(round(2.0 * float(15))), 1)
+net.init_layers(len(self.all_inputs[0]),
+                [hidden_nodes],
+                len(self.all_targets[0]))
+net.layers[1].set_activation_type('tanh')
+net.output_layer.set_activation_type('sigmoid')
+#   Use the genotype to get starting weights
+for layer in net.layers[1:]:
+    for node in layer.nodes:
+        for conn in node.input_connections:
+            #   every time it is asked, another starting weight is given
+            conn.set_weight(self.runtime_resolve('<starting_weight>', 'float'))
+# Note the injection of data from the genotype
+# In a real project, the genotype might pull the data from elsewhere.
+net.set_all_inputs(self.all_inputs)
+net.set_all_targets(self.all_targets)
+length = len(self.all_inputs)
+learn_end_point = int(length * .6)
+validation_end_point = int(length * .8)
+net.set_learn_range(0, learn_end_point)
+net.set_validation_range(0, learn_end_point)
+net.set_validation_range(learn_end_point + 1, validation_end_point)
+net.set_test_range(validation_end_point + 1, length - 1)
+net.set_learnrate(0.23)
+epochs = int(round(2.8 * float(1000)))
+if epochs > 0:
+    #   Use learning to further set the weights
+    net.learn(epochs=epochs, show_epoch_results=True,
+        random_testing=False)
+#   Use validation for generating the fitness value
+mse = net.validate(show_sample_interval=0)
+print "mse", mse
+modelname = self.runtime_resolve('<model_name>', 'str')
+net.save(modelname)
+self.set_bnf_variable('<saved_name>', modelname)
+#   This method can be used to look at all the particulars
+#       of what happened...uses disk space
+self.net = net
+fitness = mse
+self.set_bnf_variable('<fitness>', fitness)
+
+2015-10-27 04:28:07,090 stopping processing due to max generation
+2015-10-27 04:28:07,090 completed run: generations: 1, best member:0 fitness: 2.0
+2015-10-27 04:30:21,208 started run
+2015-10-27 04:30:21,283 Finished generation: 0 Max generations: 1
+2015-10-27 04:30:21,283 best_value: 2.0 median: 2.0 mean: 2.0
+2015-10-27 04:30:21,284 import math
+import random
+from pyneurgen.neuralnet import NeuralNet
+from pyneurgen.nodes import Node, BiasNode, CopyNode, Connection
+from pyneurgen.layers import Layer
+from pyneurgen.recurrent import JordanRecurrent
+net = NeuralNet()
+hidden_nodes = max(int(round(2.2 * float(15))), 1)
+net.init_layers(len(self.all_inputs[0]),
+                [hidden_nodes],
+                len(self.all_targets[0]))
+net.layers[1].set_activation_type('sigmoid')
+net.output_layer.set_activation_type('linear')
+#   Use the genotype to get starting weights
+for layer in net.layers[1:]:
+    for node in layer.nodes:
+        for conn in node.input_connections:
+            #   every time it is asked, another starting weight is given
+            conn.set_weight(self.runtime_resolve('<starting_weight>', 'float'))
+# Note the injection of data from the genotype
+# In a real project, the genotype might pull the data from elsewhere.
+net.set_all_inputs(self.all_inputs)
+net.set_all_targets(self.all_targets)
+length = len(self.all_inputs)
+learn_end_point = int(length * .6)
+validation_end_point = int(length * .8)
+net.set_learn_range(0, learn_end_point)
+net.set_validation_range(0, learn_end_point)
+net.set_validation_range(learn_end_point + 1, validation_end_point)
+net.set_test_range(validation_end_point + 1, length - 1)
+net.set_learnrate(0.26)
+epochs = int(round(2.7 * float(1000)))
+if epochs > 0:
+    #   Use learning to further set the weights
+    net.learn(epochs=epochs, show_epoch_results=True,
+        random_testing=False)
+#   Use validation for generating the fitness value
+mse = net.validate(show_sample_interval=0)
+print "mse", mse
+modelname = self.runtime_resolve('<model_name>', 'str')
+net.save(modelname)
+self.set_bnf_variable('<saved_name>', modelname)
+#   This method can be used to look at all the particulars
+#       of what happened...uses disk space
+self.net = net
+fitness = mse
+self.set_bnf_variable('<fitness>', fitness)
+
+2015-10-27 04:30:21,339 stopping processing due to max generation
+2015-10-27 04:30:21,339 completed run: generations: 1, best member:0 fitness: 2.0
+2015-10-27 04:42:21,317 started run
+2015-10-27 04:42:21,377 Finished generation: 0 Max generations: 1
+2015-10-27 04:42:21,377 best_value: 2.0 median: 2.0 mean: 2.0
+2015-10-27 04:42:21,377 import math
+import random
+from pyneurgen.neuralnet import NeuralNet
+from pyneurgen.nodes import Node, BiasNode, CopyNode, Connection
+from pyneurgen.layers import Layer
+from pyneurgen.recurrent import JordanRecurrent
+net = NeuralNet()
+hidden_nodes = max(int(round(2.5 * float(15))), 1)
+net.init_layers(len(self.all_inputs[0]),
+                [hidden_nodes],
+                len(self.all_targets[0]))
+net.layers[1].set_activation_type('sigmoid')
+net.output_layer.set_activation_type('tanh')
+#   Use the genotype to get starting weights
+for layer in net.layers[1:]:
+    for node in layer.nodes:
+        for conn in node.input_connections:
+            #   every time it is asked, another starting weight is given
+            conn.set_weight(self.runtime_resolve('<starting_weight>', 'float'))
+# Note the injection of data from the genotype
+# In a real project, the genotype might pull the data from elsewhere.
+net.set_all_inputs(self.all_inputs)
+net.set_all_targets(self.all_targets)
+length = len(self.all_inputs)
+learn_end_point = int(length * .6)
+validation_end_point = int(length * .8)
+net.set_learn_range(0, learn_end_point)
+net.set_validation_range(0, learn_end_point)
+net.set_validation_range(learn_end_point + 1, validation_end_point)
+net.set_test_range(validation_end_point + 1, length - 1)
+net.set_learnrate(0.20)
+epochs = int(round(2.6 * float(1000)))
+if epochs > 0:
+    #   Use learning to further set the weights
+    net.learn(epochs=epochs, show_epoch_results=True,
+        random_testing=False)
+#   Use validation for generating the fitness value
+mse = net.validate(show_sample_interval=0)
+print "mse", mse
+modelname = self.runtime_resolve('<model_name>', 'str')
+net.save(modelname)
+self.set_bnf_variable('<saved_name>', modelname)
+#   This method can be used to look at all the particulars
+#       of what happened...uses disk space
+self.net = net
+fitness = mse
+self.set_bnf_variable('<fitness>', fitness)
+
+2015-10-27 04:42:21,415 stopping processing due to max generation
+2015-10-27 04:42:21,416 completed run: generations: 1, best member:0 fitness: 2.0
+2015-10-27 04:44:02,639 started run
+2015-10-27 04:44:02,737 Finished generation: 0 Max generations: 1
+2015-10-27 04:44:02,737 best_value: 2.0 median: 2.0 mean: 2.0
+2015-10-27 04:44:02,737 import math
+import random
+from pyneurgen.neuralnet import NeuralNet
+from pyneurgen.nodes import Node, BiasNode, CopyNode, Connection
+from pyneurgen.layers import Layer
+from pyneurgen.recurrent import JordanRecurrent
+net = NeuralNet()
+hidden_nodes = max(int(round(2.9 * float(15))), 1)
+net.init_layers(len(self.all_inputs[0]),
+                [hidden_nodes],
+                len(self.all_targets[0]))
+net.layers[1].set_activation_type('sigmoid')
+net.output_layer.set_activation_type('linear')
+#   Use the genotype to get starting weights
+for layer in net.layers[1:]:
+    for node in layer.nodes:
+        for conn in node.input_connections:
+            #   every time it is asked, another starting weight is given
+            conn.set_weight(self.runtime_resolve('<starting_weight>', 'float'))
+# Note the injection of data from the genotype
+# In a real project, the genotype might pull the data from elsewhere.
+net.set_all_inputs(self.all_inputs)
+net.set_all_targets(self.all_targets)
+length = len(self.all_inputs)
+learn_end_point = int(length * .6)
+validation_end_point = int(length * .8)
+net.set_learn_range(0, learn_end_point)
+net.set_validation_range(0, learn_end_point)
+net.set_validation_range(learn_end_point + 1, validation_end_point)
+net.set_test_range(validation_end_point + 1, length - 1)
+net.set_learnrate(0.28)
+epochs = int(round(2.0 * float(1000)))
+if epochs > 0:
+    #   Use learning to further set the weights
+    net.learn(epochs=epochs, show_epoch_results=True,
+        random_testing=False)
+#   Use validation for generating the fitness value
+mse = net.validate(show_sample_interval=0)
+print "mse", mse
+modelname = self.runtime_resolve('<model_name>', 'str')
+net.save(modelname)
+self.set_bnf_variable('<saved_name>', modelname)
+#   This method can be used to look at all the particulars
+#       of what happened...uses disk space
+self.net = net
+fitness = mse
+self.set_bnf_variable('<fitness>', fitness)
+
+2015-10-27 04:44:02,797 stopping processing due to max generation
+2015-10-27 04:44:02,798 completed run: generations: 1, best member:0 fitness: 2.0
+2015-10-27 04:50:01,195 started run
+2015-10-27 04:52:50,369 started run
+2015-10-27 04:54:43,187 started run
+2015-10-27 04:55:36,620 started run
+2015-10-27 04:55:43,234 Finished generation: 0 Max generations: 50
+2015-10-27 04:55:43,234 best_value: 2.0 median: 2.0 mean: 2.0
+2015-10-27 04:55:43,234 import math
+import random
+from pyneurgen.neuralnet import NeuralNet
+from pyneurgen.nodes import Node, BiasNode, CopyNode, Connection
+from pyneurgen.layers import Layer
+from pyneurgen.recurrent import JordanRecurrent
+net = NeuralNet()
+hidden_nodes = max(int(round(2.1 * float(15))), 1)
+net.init_layers(len(self.all_inputs[0]),
+                [hidden_nodes],
+                len(self.all_targets[0]))
+net.layers[1].set_activation_type('sigmoid')
+net.output_layer.set_activation_type('linear')
+#   Use the genotype to get starting weights
+for layer in net.layers[1:]:
+    for node in layer.nodes:
+        for conn in node.input_connections:
+            #   every time it is asked, another starting weight is given
+            conn.set_weight(self.runtime_resolve('<starting_weight>', 'float'))
+# Note the injection of data from the genotype
+# In a real project, the genotype might pull the data from elsewhere.
+net.set_all_inputs(self.all_inputs)
+net.set_all_targets(self.all_targets)
+length = len(self.all_inputs)
+learn_end_point = int(length * .6)
+validation_end_point = int(length * .8)
+net.set_learn_range(0, learn_end_point)
+net.set_validation_range(0, learn_end_point)
+net.set_validation_range(learn_end_point + 1, validation_end_point)
+net.set_test_range(validation_end_point + 1, length - 1)
+net.set_learnrate(27)
+epochs = int(round(2.4 * float(1000)))
+if epochs > 0:
+    #   Use learning to further set the weights
+    net.learn(epochs=epochs, show_epoch_results=True,
+        random_testing=False)
+#   Use validation for generating the fitness value
+mse = net.validate(show_sample_interval=0)
+print "mse", mse
+modelname = self.runtime_resolve('<model_name>', 'str')
+net.save(modelname)
+self.set_bnf_variable('<saved_name>', modelname)
+#   This method can be used to look at all the particulars
+#       of what happened...uses disk space
+self.net = net
+fitness = mse
+self.set_bnf_variable('<fitness>', fitness)
+
+2015-10-27 04:55:51,940 Finished generation: 1 Max generations: 50
+2015-10-27 04:55:51,941 best_value: 2.0 median: 2.0 mean: 2.0
+2015-10-27 04:55:51,941 import math
+import random
+from pyneurgen.neuralnet import NeuralNet
+from pyneurgen.nodes import Node, BiasNode, CopyNode, Connection
+from pyneurgen.layers import Layer
+from pyneurgen.recurrent import JordanRecurrent
+net = NeuralNet()
+hidden_nodes = max(int(round(2.1 * float(15))), 1)
+net.init_layers(len(self.all_inputs[0]),
+                [hidden_nodes],
+                len(self.all_targets[0]))
+net.layers[1].set_activation_type('sigmoid')
+net.output_layer.set_activation_type('linear')
+#   Use the genotype to get starting weights
+for layer in net.layers[1:]:
+    for node in layer.nodes:
+        for conn in node.input_connections:
+            #   every time it is asked, another starting weight is given
+            conn.set_weight(self.runtime_resolve('<starting_weight>', 'float'))
+# Note the injection of data from the genotype
+# In a real project, the genotype might pull the data from elsewhere.
+net.set_all_inputs(self.all_inputs)
+net.set_all_targets(self.all_targets)
+length = len(self.all_inputs)
+learn_end_point = int(length * .6)
+validation_end_point = int(length * .8)
+net.set_learn_range(0, learn_end_point)
+net.set_validation_range(0, learn_end_point)
+net.set_validation_range(learn_end_point + 1, validation_end_point)
+net.set_test_range(validation_end_point + 1, length - 1)
+net.set_learnrate(27)
+epochs = int(round(2.4 * float(1000)))
+if epochs > 0:
+    #   Use learning to further set the weights
+    net.learn(epochs=epochs, show_epoch_results=True,
+        random_testing=False)
+#   Use validation for generating the fitness value
+mse = net.validate(show_sample_interval=0)
+print "mse", mse
+modelname = self.runtime_resolve('<model_name>', 'str')
+net.save(modelname)
+self.set_bnf_variable('<saved_name>', modelname)
+#   This method can be used to look at all the particulars
+#       of what happened...uses disk space
+self.net = net
+fitness = mse
+self.set_bnf_variable('<fitness>', fitness)
+
+2015-10-27 04:55:58,813 Finished generation: 2 Max generations: 50
+2015-10-27 04:55:58,813 best_value: 2.0 median: 2.0 mean: 2.0
+2015-10-27 04:55:58,813 import math
+import random
+from pyneurgen.neuralnet import NeuralNet
+from pyneurgen.nodes import Node, BiasNode, CopyNode, Connection
+from pyneurgen.layers import Layer
+from pyneurgen.recurrent import JordanRecurrent
+net = NeuralNet()
+hidden_nodes = max(int(round(2.1 * float(15))), 1)
+net.init_layers(len(self.all_inputs[0]),
+                [hidden_nodes],
+                len(self.all_targets[0]))
+net.layers[1].set_activation_type('sigmoid')
+net.output_layer.set_activation_type('linear')
+#   Use the genotype to get starting weights
+for layer in net.layers[1:]:
+    for node in layer.nodes:
+        for conn in node.input_connections:
+            #   every time it is asked, another starting weight is given
+            conn.set_weight(self.runtime_resolve('<starting_weight>', 'float'))
+# Note the injection of data from the genotype
+# In a real project, the genotype might pull the data from elsewhere.
+net.set_all_inputs(self.all_inputs)
+net.set_all_targets(self.all_targets)
+length = len(self.all_inputs)
+learn_end_point = int(length * .6)
+validation_end_point = int(length * .8)
+net.set_learn_range(0, learn_end_point)
+net.set_validation_range(0, learn_end_point)
+net.set_validation_range(learn_end_point + 1, validation_end_point)
+net.set_test_range(validation_end_point + 1, length - 1)
+net.set_learnrate(27)
+epochs = int(round(2.4 * float(1000)))
+if epochs > 0:
+    #   Use learning to further set the weights
+    net.learn(epochs=epochs, show_epoch_results=True,
+        random_testing=False)
+#   Use validation for generating the fitness value
+mse = net.validate(show_sample_interval=0)
+print "mse", mse
+modelname = self.runtime_resolve('<model_name>', 'str')
+net.save(modelname)
+self.set_bnf_variable('<saved_name>', modelname)
+#   This method can be used to look at all the particulars
+#       of what happened...uses disk space
+self.net = net
+fitness = mse
+self.set_bnf_variable('<fitness>', fitness)
+
+2015-10-27 04:56:05,860 Finished generation: 3 Max generations: 50
+2015-10-27 04:56:05,861 best_value: 2.0 median: 2.0 mean: 2.0
+2015-10-27 04:56:05,861 import math
+import random
+from pyneurgen.neuralnet import NeuralNet
+from pyneurgen.nodes import Node, BiasNode, CopyNode, Connection
+from pyneurgen.layers import Layer
+from pyneurgen.recurrent import JordanRecurrent
+net = NeuralNet()
+hidden_nodes = max(int(round(2.1 * float(15))), 1)
+net.init_layers(len(self.all_inputs[0]),
+                [hidden_nodes],
+                len(self.all_targets[0]))
+net.layers[1].set_activation_type('sigmoid')
+net.output_layer.set_activation_type('linear')
+#   Use the genotype to get starting weights
+for layer in net.layers[1:]:
+    for node in layer.nodes:
+        for conn in node.input_connections:
+            #   every time it is asked, another starting weight is given
+            conn.set_weight(self.runtime_resolve('<starting_weight>', 'float'))
+# Note the injection of data from the genotype
+# In a real project, the genotype might pull the data from elsewhere.
+net.set_all_inputs(self.all_inputs)
+net.set_all_targets(self.all_targets)
+length = len(self.all_inputs)
+learn_end_point = int(length * .6)
+validation_end_point = int(length * .8)
+net.set_learn_range(0, learn_end_point)
+net.set_validation_range(0, learn_end_point)
+net.set_validation_range(learn_end_point + 1, validation_end_point)
+net.set_test_range(validation_end_point + 1, length - 1)
+net.set_learnrate(27)
+epochs = int(round(2.4 * float(1000)))
+if epochs > 0:
+    #   Use learning to further set the weights
+    net.learn(epochs=epochs, show_epoch_results=True,
+        random_testing=False)
+#   Use validation for generating the fitness value
+mse = net.validate(show_sample_interval=0)
+print "mse", mse
+modelname = self.runtime_resolve('<model_name>', 'str')
+net.save(modelname)
+self.set_bnf_variable('<saved_name>', modelname)
+#   This method can be used to look at all the particulars
+#       of what happened...uses disk space
+self.net = net
+fitness = mse
+self.set_bnf_variable('<fitness>', fitness)
+
+2015-10-27 04:56:21,398 started run
+2015-10-27 04:58:34,484 started run
+2015-10-27 04:59:11,516 started run
